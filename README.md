@@ -6,12 +6,17 @@ Database foundation for migrating the company's AppSheet/Google Sheets property 
 
 The initial backend provides 30 application tables, tenant foreign keys, role-scoped reads, audited phone access, private file access, reviewed import staging, and transactional commission RPCs. No frontend or HTTP CRUD server has been implemented, and no live Supabase project has been deployed.
 
+The first application feature is defined in [authenticated property inventory browsing](docs/features/property-inventory.md), with domain terms in [CONTEXT.md](CONTEXT.md) and architectural decisions in [docs/adr/](docs/adr/). This is a feature definition, not an implemented or deployed application.
+
 | Path | Responsibility |
 |---|---|
 | `AGENTS.md` | Project-wide agent instructions |
 | `docs/DATABASE_CONTRACT.md` | Domain rules, authorization, lifecycle and API contract |
 | `docs/database-contract.json` | Machine-readable integration contract and RPC arguments |
 | `docs/SCHEMA.md` / `docs/schema.json` | All fields, constraints, indexes and source mappings |
+| `CONTEXT.md` | Canonical domain glossary |
+| `docs/features/property-inventory.md` | First end-to-end feature scope, behavior and acceptance gates |
+| `docs/adr/` | Recorded architectural decisions |
 | `supabase/migrations/` | Authoritative versioned database SQL |
 | `supabase/config.toml` | Local Supabase configuration; exposes only `crm` |
 | `scripts/stage_workbook.py` | Redacted workbook-to-review-staging generator |

@@ -1,0 +1,5 @@
+# Inventory browsing is property-centric, not listing-centric
+
+An inventory result and its filtered total represent one physical property, preserving organization-visible assets without listings and preventing sale/rental or repeated offers from duplicating the asset. Each listing retains its own purpose, asking amount, period, approval and commercial status; a property row shows at most two matching readable listing previews, while detail pages paginate the full readable listing set rather than inventing a single property price. Listing-centric browsing was considered because budget/status filtering is simpler, but it would omit unlisted assets and change the meaning of inventory counts; every combined listing filter must therefore be satisfied by one readable listing, not by different siblings.
+
+Evidence: [database entity contract](../DATABASE_CONTRACT.md#entity-inventory), [listing fields](../SCHEMA.md#crmlistings), [read authorization](../DATABASE_CONTRACT.md#tenant-identity-and-authorization-contract).
