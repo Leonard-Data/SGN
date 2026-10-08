@@ -32,3 +32,17 @@ The local engine does not prove live Supabase Auth/PostgREST, Storage HTTP behav
 ## Repository scope
 
 The initial repository implements database artifacts, import tooling and synthetic tests. It does not implement HTTP CRUD routes, frontend forms, Auth screens, background jobs or a live deployment. Add those components against the existing contract; do not describe them as already available.
+
+## Agent skills
+
+### Issue tracker
+
+Track issues and specs in GitHub Issues for `Leonard-Data/SGN`. Before ticket operations, read `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the five default triage labels. Before triage, read `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Use single-context domain documentation. Before exploration or architecture changes, read `docs/agents/domain.md` for consumer rules and stack constraints.
