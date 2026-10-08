@@ -1,0 +1,118 @@
+{
+  "engine": "PGlite PostgreSQL (Supabase Auth/Storage schemas represented by test stubs)",
+  "passed": 27,
+  "tests": [
+    {
+      "test": "Complete SQL migration applies on PostgreSQL engine",
+      "result": "pass"
+    },
+    {
+      "test": "Final price times direct rates produces 70m payable at closing",
+      "result": "pass"
+    },
+    {
+      "test": "Second closing key cannot accrue twice",
+      "result": "pass"
+    },
+    {
+      "test": "Rate changes after closing rejected",
+      "result": "pass"
+    },
+    {
+      "test": "Rental cannot use sale commission rule",
+      "result": "pass"
+    },
+    {
+      "test": "Sales A sees only own earnings, including shared deal",
+      "result": "pass"
+    },
+    {
+      "test": "Sales cannot close deals",
+      "result": "pass"
+    },
+    {
+      "test": "Browser cannot directly insert ledger entries",
+      "result": "pass"
+    },
+    {
+      "test": "Raw phone table inaccessible to browser",
+      "result": "pass"
+    },
+    {
+      "test": "Unassigned salesperson cannot reveal owner contact phones",
+      "result": "pass"
+    },
+    {
+      "test": "Foreign organization cannot close a deal",
+      "result": "pass"
+    },
+    {
+      "test": "Partial payment and identical retry settle once",
+      "result": "pass"
+    },
+    {
+      "test": "Overpayment attempt rejected",
+      "result": "pass"
+    },
+    {
+      "test": "Duplicate bank reference rejected",
+      "result": "pass"
+    },
+    {
+      "test": "Same event key with changed body rejected",
+      "result": "pass"
+    },
+    {
+      "test": "Manager scoped balances include payments without leaking payment headers",
+      "result": "pass"
+    },
+    {
+      "test": "Correction, cancellation, recovery preserve snapshots and reconcile balances",
+      "result": "pass"
+    },
+    {
+      "test": "Journal immutable even for database owner",
+      "result": "pass"
+    },
+    {
+      "test": "Composite FK rejects cross-company property linkage",
+      "result": "pass"
+    },
+    {
+      "test": "Nonfinite final price rejected",
+      "result": "pass"
+    },
+    {
+      "test": "Out-of-era address version rejected",
+      "result": "pass"
+    },
+    {
+      "test": "Numeric half-VND rounding boundary uses half-away-from-zero",
+      "result": "pass"
+    },
+    {
+      "test": "RLS enabled on all tables and phone reveal audited",
+      "result": "pass"
+    },
+    {
+      "test": "Private Storage policy isolates registered files across companies",
+      "result": "pass"
+    },
+    {
+      "test": "Anonymous role cannot access financial RPC",
+      "result": "pass"
+    },
+    {
+      "test": "Reviewed property promotion is repeatable; legacy sold does not create commission",
+      "result": "pass"
+    },
+    {
+      "test": "Staging rejects password field",
+      "result": "pass"
+    }
+  ],
+  "limitations": [
+    "No live Supabase deployment or adviser scan",
+    "Single-connection engine: real concurrent sessions and Storage HTTP flow still need a Supabase integration test"
+  ]
+}

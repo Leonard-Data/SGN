@@ -1,0 +1,18 @@
+{
+  "name": "sgn-real-estate-crm-migrations",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/verify.mjs",
+    "docs": "node scripts/build_dictionary.mjs",
+    "check:contract": "node scripts/check_contract.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "supabase": "2.120.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

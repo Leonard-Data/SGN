@@ -1,0 +1,11 @@
+node_modules/
+private-imports/
+*.xlsx
+*.csv
+supabase/.temp/
+__pycache__/
+.env
+.env.*
+!.env.example
+*.log
+.venv/

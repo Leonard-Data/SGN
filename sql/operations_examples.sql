@@ -1,0 +1,13 @@
+-- Calls use the authenticated user's JWT, never a caller-supplied actor UUID.
+-- Supabase JS: supabase.schema('crm').rpc('close_deal', {p_org, p_deal, p_closed_at, p_key})
+-- Illustrative calls only. IDs and percentages below are synthetic examples.
+-- select crm.approve_commission_term(1,1,2,0.005,'salesperson','Manager rate approval reference','term-unique-key');
+-- select crm.close_deal(1,1,'2026-10-08T15:00:00+07:00','close-unique-key');
+-- select crm.record_commission_payment(1,2,'payout','bank-transfer-reference',now(),
+--   '[{"deal_id":1,"amount_vnd":20000000}]'::jsonb,'payment-unique-key');
+-- select * from crm.commission_balances;
+-- select crm.adjust_commission(1,1,-10000000,'Approved price/rate correction evidence','adjust-unique-key');
+-- select crm.cancel_closed_deal(1,1,'Cancellation agreement reference','cancel-unique-key');
+-- select crm.record_commission_payment(1,2,'recovery','refund-reference',now(),
+--   '[{"deal_id":1,"amount_vnd":20000000}]'::jsonb,'recovery-unique-key');
+-- select * from crm.reveal_contact_phones(1,1);

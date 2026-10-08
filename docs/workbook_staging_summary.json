@@ -1,0 +1,43 @@
+{
+  "source_sha256": "0e467d2c2a9e0ae22ab8028abd7c179bf70bea17324d297d54fc8bd9b3f35259",
+  "transform_version": "sgn-stager-1.0.0",
+  "source_timezone_assumption": "Asia/Ho_Chi_Minh",
+  "sheet_counts": {
+    "Thông tin dự án": 19233,
+    "Loại Hình": 2,
+    "Loại dự án": 18,
+    "Nhân viên": 17,
+    "Contracts": 20480,
+    "Historical": 19151,
+    "Attachments": 2544,
+    "clicks": 56932,
+    "Trạng thái dự án": 6,
+    "Quận": 22,
+    "Phường": 367,
+    "Cities": 2,
+    "Login": 0
+  },
+  "total_source_rows": 118774,
+  "issues": {
+    "duplicate_property_id": 2,
+    "nonpositive_Giá Thuê (triệu Đồng)": 1980,
+    "address_reference_review": 510,
+    "nonpositive_Giá Bán (tỷ Đồng)": 131,
+    "invalid_Giá Bán (tỷ Đồng)": 98,
+    "invalid_Giá Thuê (triệu Đồng)": 2,
+    "price_unit_review": 4,
+    "missing_property_id": 23,
+    "contaminated_lookup": 5,
+    "unresolved_property_reference": 10418,
+    "missing_property_reference": 10927,
+    "ambiguous_property_reference": 34,
+    "missing_file_path": 87
+  },
+  "dispositions": {
+    "quarantined": 21490,
+    "pending": 97261,
+    "excluded": 23
+  },
+  "password_fields_exported": false,
+  "output_bytes": 77769984
+}

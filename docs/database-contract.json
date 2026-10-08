@@ -1,0 +1,247 @@
+{
+  "contract_version": "1.0.0",
+  "repository": "Leonard-Data/SGN",
+  "implementation_status": "Database artifacts only; no deployed project or application API",
+  "authoritative_migrations": "supabase/migrations",
+  "field_catalog": "docs/schema.json",
+  "human_contract": "docs/DATABASE_CONTRACT.md",
+  "column_dictionary": "docs/SCHEMA.md",
+  "exposed_schemas": [
+    "crm"
+  ],
+  "unexposed_schemas": [
+    "crm_private",
+    "crm_import"
+  ],
+  "tables": [
+    "crm.activities",
+    "crm.admin_unit_crosswalks",
+    "crm.admin_unit_versions",
+    "crm.commission_entries",
+    "crm.commission_payment_allocations",
+    "crm.commission_payments",
+    "crm.contacts",
+    "crm.deal_commission_terms",
+    "crm.deals",
+    "crm.listings",
+    "crm.organizations",
+    "crm.properties",
+    "crm.property_addresses",
+    "crm.property_change_history",
+    "crm.property_contacts",
+    "crm.property_files",
+    "crm.property_types",
+    "crm.road_access_types",
+    "crm.staff_profiles",
+    "crm.teams",
+    "crm_import.batches",
+    "crm_import.issues",
+    "crm_import.property_aliases",
+    "crm_import.property_promotions",
+    "crm_import.source_rows",
+    "crm_private.audit_events",
+    "crm_private.contact_access_events",
+    "crm_private.contact_phones",
+    "crm_private.memberships",
+    "crm_private.operation_requests"
+  ],
+  "rpcs": [
+    {
+      "name": "approve_commission_term",
+      "schema": "crm",
+      "parameters": [
+        {
+          "name": "p_org",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_deal",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_beneficiary",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_rate",
+          "sql_type": "numeric"
+        },
+        {
+          "name": "p_role",
+          "sql_type": "text"
+        },
+        {
+          "name": "p_evidence",
+          "sql_type": "text"
+        },
+        {
+          "name": "p_key",
+          "sql_type": "text"
+        }
+      ],
+      "returns": "jsonb"
+    },
+    {
+      "name": "close_deal",
+      "schema": "crm",
+      "parameters": [
+        {
+          "name": "p_org",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_deal",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_closed_at",
+          "sql_type": "timestamptz"
+        },
+        {
+          "name": "p_key",
+          "sql_type": "text"
+        }
+      ],
+      "returns": "jsonb"
+    },
+    {
+      "name": "adjust_commission",
+      "schema": "crm",
+      "parameters": [
+        {
+          "name": "p_org",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_entry",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_amount",
+          "sql_type": "numeric"
+        },
+        {
+          "name": "p_reason",
+          "sql_type": "text"
+        },
+        {
+          "name": "p_key",
+          "sql_type": "text"
+        }
+      ],
+      "returns": "jsonb"
+    },
+    {
+      "name": "cancel_closed_deal",
+      "schema": "crm",
+      "parameters": [
+        {
+          "name": "p_org",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_deal",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_reason",
+          "sql_type": "text"
+        },
+        {
+          "name": "p_key",
+          "sql_type": "text"
+        }
+      ],
+      "returns": "jsonb"
+    },
+    {
+      "name": "record_commission_payment",
+      "schema": "crm",
+      "parameters": [
+        {
+          "name": "p_org",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_staff",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_kind",
+          "sql_type": "text"
+        },
+        {
+          "name": "p_reference",
+          "sql_type": "text"
+        },
+        {
+          "name": "p_paid_at",
+          "sql_type": "timestamptz"
+        },
+        {
+          "name": "p_allocations",
+          "sql_type": "jsonb"
+        },
+        {
+          "name": "p_key",
+          "sql_type": "text"
+        }
+      ],
+      "returns": "jsonb"
+    },
+    {
+      "name": "reveal_contact_phones",
+      "schema": "crm",
+      "parameters": [
+        {
+          "name": "p_org",
+          "sql_type": "bigint"
+        },
+        {
+          "name": "p_contact",
+          "sql_type": "bigint"
+        }
+      ],
+      "returns": "table(phone_id bigint,number_e164 text,number_raw text,verification_status text)"
+    }
+  ],
+  "read_models": [
+    "crm.commission_balances"
+  ],
+  "money": {
+    "currency": "VND",
+    "sql_type": "numeric(18,0)",
+    "wire_format": "decimal string",
+    "scale": 0
+  },
+  "rate": {
+    "sql_type": "numeric(9,8)",
+    "wire_format": "decimal fraction string",
+    "example": "0.005 = 0.5%"
+  },
+  "entity_id": {
+    "sql_type": "bigint",
+    "wire_format": "decimal string"
+  },
+  "commission": {
+    "basis": "verified_final_sale_price",
+    "payable_trigger": "deal_close",
+    "brokerage_collection_gate": false
+  },
+  "roles": [
+    "sales",
+    "manager",
+    "operations",
+    "finance",
+    "admin"
+  ],
+  "browser_direct_writes": false,
+  "financial_writes": "Authenticated crm RPCs only",
+  "general_writes": "Trusted server validates actor, tenant, role and assignment before service-role writes",
+  "new_property_address": "current official province plus commune/ward; original text retained",
+  "legacy_address": "retain original district/ward; crosswalk suggestions require review",
+  "private_buckets": [
+    "sgn-property-images",
+    "sgn-agreements"
+  ]
+}
