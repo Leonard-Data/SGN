@@ -1,8 +1,8 @@
 const nextConfig = {
   images: { unoptimized: true },
   env: {
-    NEXT_PUBLIC_SUPABASE_URL: process.env.SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: process.env.SUPABASE_PUBLISHABLE_KEY,
+    NEXT_PUBLIC_SUPABASE_URL: process.env.SUPABASE_URL ?? '',
+    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: process.env.SUPABASE_PUBLISHABLE_KEY ?? '',
   },
   async headers() {
     return [{ source: '/(.*)', headers: [
