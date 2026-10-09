@@ -4,15 +4,33 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "node tests/verify.mjs",
     "docs": "node scripts/build_dictionary.mjs",
     "check:contract": "node scripts/check_contract.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.8",
-    "supabase": "2.120.0"
+    "@types/react": "19.3.0",
+    "supabase": "2.120.0",
+    "typescript": "7.0.2"
   },
   "engines": {
     "node": ">=22"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.57.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^16.4.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^4.3.3"
   }
 }
