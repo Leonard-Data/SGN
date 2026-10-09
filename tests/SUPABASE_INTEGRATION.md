@@ -2,7 +2,7 @@
 
 Run these on the explicitly selected development project, with synthetic data and separate Auth sessions. The local verification report does not claim these have already passed.
 
-[Issue #2 deployment evidence](../docs/DEPLOYMENT.md#approved-development-deployment-evidence) records the live baseline catalog/adviser review and selected real Auth/Data API scope and unchanged-JWT revocation checks. This is partial evidence for gates 1 and 9, not completion of every scenario below; the human administrator bootstrap remains pending.
+[Issue #2 deployment evidence](../docs/DEPLOYMENT.md#approved-development-deployment-evidence) records the live baseline catalog/adviser review, completed human administrator bootstrap with an operator-approved existing Auth account, and selected real Auth/Data API scope and unchanged-JWT revocation checks. This is partial evidence for gates 1 and 9, not completion of every scenario below; the human administrator's first sign-in and application Auth redirects remain unverified.
 
 1. Expose crm only in Data API and confirm authenticated user requests return the same scoped rows as the SQL tests. Anonymous and nonmember users must not read CRM data or invoke financial RPCs.
 2. Use two team managers in different teams within one company. Each should see only their team's financial terms/entries/allocations. A payment spanning teams must not leak its complete header amount to either manager.

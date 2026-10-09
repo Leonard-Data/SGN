@@ -4,7 +4,7 @@ Database foundation for migrating the company's AppSheet/Google Sheets property 
 
 **Start with [docs/DATABASE_CONTRACT.md](docs/DATABASE_CONTRACT.md).** Agents working anywhere in this project must also read [AGENTS.md](AGENTS.md).
 
-The initial backend provides 30 application tables, tenant foreign keys, role-scoped reads, audited phone access, private file access, reviewed import staging, and transactional commission RPCs. The baseline is deployed to an explicitly approved development project; [live verification evidence and the pending human administrator bootstrap](docs/DEPLOYMENT.md#approved-development-deployment-evidence) are recorded separately. No frontend, HTTP CRUD server or production deployment has been implemented.
+The initial backend provides 30 application tables, tenant foreign keys, role-scoped reads, audited phone access, private file access, reviewed import staging, and transactional commission RPCs. The baseline and initial administrator are provisioned on an explicitly approved development project; [live deployment and access evidence](docs/DEPLOYMENT.md#approved-development-deployment-evidence) is recorded separately. No frontend, HTTP CRUD server or production deployment has been implemented.
 
 The first application feature is defined in [authenticated property inventory browsing](docs/features/property-inventory.md), with domain terms in [CONTEXT.md](CONTEXT.md) and architectural decisions in [docs/adr/](docs/adr/). This is a feature definition, not an implemented or deployed application.
 
