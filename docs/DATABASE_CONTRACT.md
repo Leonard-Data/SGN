@@ -6,7 +6,7 @@ Contract version **1.0.0**, 8 October 2026. Applies to all application, backend,
 
 The migration files in `supabase/migrations/` define executable behavior. `SCHEMA.md` and `schema.json` are generated from the catalog of the tested migration. `database-contract.json` records the integration surface. This document explains the rules that consuming code must follow.
 
-The repository supplies database SQL, local Supabase configuration, staging tooling and synthetic tests. There are no implemented HTTP CRUD endpoints, frontend forms or live project credentials. Examples of future client/server usage describe required integration behavior, not deployed services.
+The repository supplies database SQL, local Supabase configuration, staging tooling and synthetic tests. The accepted baseline is deployed to an explicitly approved development project; [deployment evidence](DEPLOYMENT.md#approved-development-deployment-evidence) distinguishes completed catalog/Auth/Data API checks from the pending human administrator bootstrap. There are no implemented HTTP CRUD endpoints, frontend forms or committed live credentials. Examples of future client/server usage describe required integration behavior, not implemented CRUD services.
 
 | Artifact | Agent use |
 |---|---|
