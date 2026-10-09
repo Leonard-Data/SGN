@@ -4,7 +4,9 @@ These instructions apply to the entire repository, including future frontend, ba
 
 ## Read before working
 
-1. Read `docs/DATABASE_CONTRACT.md` for domain rules, write boundaries and exact RPC interfaces.
+1. Read `DESIGN.md` for the primary product design, system architecture, UI tokens, localization, theme, and project structure.
+2. Read `docs/agents/design.md` for the implementation checklist and frontend/Supabase boundaries.
+3. Read `docs/DATABASE_CONTRACT.md` for domain rules, write boundaries and exact RPC interfaces.
 2. Read the relevant tables in `docs/SCHEMA.md`. Use `docs/schema.json` for the machine-readable field/constraint catalog and `docs/database-contract.json` for integration metadata.
 3. Treat versioned SQL in `supabase/migrations/` as the authoritative implementation. If a document disagrees with the SQL, inspect the SQL and fix the documentation; do not invent a missing column or RPC.
 4. Read `docs/DEPLOYMENT.md` before migration/import operations and `tests/SUPABASE_INTEGRATION.md` before claiming production readiness.
@@ -46,3 +48,7 @@ Use the five default triage labels. Before triage, read `docs/agents/triage-labe
 ### Domain docs
 
 Use single-context domain documentation. Before exploration or architecture changes, read `docs/agents/domain.md` for consumer rules and stack constraints.
+
+### Design docs
+
+`DESIGN.md` is the primary product design, system design, and project-structure guide. `docs/agents/design.md` translates it into agent execution rules. New UI work must preserve the shared Vietnamese-first localization, day/night theme, semantic tokens, accessibility, and Supabase security boundaries described there.

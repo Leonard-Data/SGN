@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export default function HomePage() { return <main className="home-placeholder"><div className="brand-mark"><span>SGN <small>REAL ESTATE CRM</small></span></div><p className="eyebrow">Workspace coming together</p><h1>Your property workspace is ready for its next chapter.</h1><p>Sign in to continue managing your property inventory, listings, and deals.</p><Link className="primary-button link-button" href="/auth/sign-in">Go to sign in</Link></main> }
